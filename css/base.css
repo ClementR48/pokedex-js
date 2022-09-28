@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: #222;
 }
 
 header {
@@ -43,6 +44,7 @@ header .user img {
 }
 
 .card-pokemon {
+  background-color: rgb(197, 197, 197);
   margin: 30px;
   padding: 10px;
   width: 150px;
@@ -52,10 +54,11 @@ header .user img {
   flex-direction: column;
   box-shadow: 0 0 0 0 ;
   transition: 0.1s;
+  cursor: pointer;
 }
 
 .card-pokemon:hover{
-  box-shadow: 5px 5px 5px #333;
+  box-shadow: 5px 5px 5px white;
   
 }
 
@@ -81,7 +84,7 @@ header .user img {
   width: 100%;
   height: 70%;
   object-fit: contain;
-  z-index: -1;
+ 
 }
 
 .card-pokemon .name-pokemon {
@@ -117,4 +120,51 @@ header .user img {
 .btn:hover{
   color: #333;
   background-color: white;
+}
+
+.container-form{
+  margin: 0 auto;
+  
+  width: 30%;
+  height: 100px;
+  padding: 20px;
+  
+}
+
+.form{
+  box-shadow: 10px 10px 1px 1px white;
+  height: 100px;
+  color: white;
+  border:  1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.form-example label {
+  margin: 20px;
+}
+
+.form-example:last-child{
+  margin-top: 25px;
+}
+
+table{
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-spacing: 0px; 
+}
+
+.cases{
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  text-align: center;
+  
+}
+.perso{
+  background-color: green;
+  text-align: center;
 }

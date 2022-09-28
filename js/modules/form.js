@@ -1,10 +1,13 @@
 import { choosePokemon } from "./choosePokemon.js";
+import { initList } from "./listPokemon.js";
+import { map } from "./map.js";
+import { drawPokemon } from "./pokemon.js";
 
 export function formUser() {
   if (!localStorage.getItem("nameUser")) {
     document.querySelector(
       ".container"
-    ).innerHTML = `<form action="" method="get" class="form-example">
+    ).innerHTML = `<div class='container-form'><form action="" method="get" class="form">
   <div class="form-example">
     <label for="name">Enter your name: </label>
     <input type="text" name="name" id="name" required>
@@ -16,7 +19,8 @@ export function formUser() {
   <div class="form-example">
     <input type="submit" value="Valider!">
   </div>
-</form>`;
+</form>
+</div>`;
 
     const form = document.querySelector("form");
 
@@ -38,6 +42,10 @@ export function formUser() {
       choosePokemon();
     }
   } else {
-    choosePokemon();
+    if (localStorage.getItem("pokemon")) {
+      map()
+    } else {
+      choosePokemon();
+    }
   }
 }

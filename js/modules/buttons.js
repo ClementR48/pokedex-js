@@ -3,16 +3,17 @@ import { formUser } from "./form.js";
 
 let init = true;
 
-export function btns() {
+export function btns(offset) {
   const buttons = document.querySelectorAll(".btn");
 
   buttons[0].addEventListener("click", handleData);
   buttons[1].addEventListener("click", handleUser);
 
+
   function handleData() {
     if (init) {
       document.querySelector(".container").innerHTML = "";
-      fetchData();
+      fetchData(offset);
       init = false;
     }
   }

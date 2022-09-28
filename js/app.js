@@ -4,7 +4,14 @@ import { fetchData } from "./modules/fetchPokemons.js";
 let offset = 0;
 
 function initApp() {
-  btns()
+  btns(offset);
+  if (localStorage.getItem("pokemon")) {
+    const imgPokemonHeader = document.querySelector(".img_pokemon_header");
+    imgPokemonHeader.setAttribute(
+      "src",
+      JSON.parse(localStorage.getItem("pokemon")).sprites.front_default
+    );
+  }
   if (localStorage.getItem("nameUser") && localStorage.getItem("imgUser")) {
     const headerName = document.querySelector(".name_user");
     headerName.textContent = localStorage.getItem("nameUser");

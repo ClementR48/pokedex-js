@@ -3,6 +3,7 @@ import { drawPokemon } from "./pokemon.js";
 
 let limit = 20;
 export const fetchData = (offset) => {
+
   initList();
   try {
     fetch(
