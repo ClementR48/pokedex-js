@@ -1,13 +1,14 @@
 import { battle } from "./battle.js";
 
+const container = document.querySelector(".container");
+
 let x = 0;
 let y = 0;
 export function map() {
-  const container = document.querySelector(".container");
   container.innerHTML = "";
 
   const tableElement = document.createElement("table");
-  for (let c = 0; c < 10; c++) {
+  for (let c = 0; c < 12; c++) {
     const row = document.createElement("tr");
     tableElement.appendChild(row);
     for (let t = 0; t < 10; t++) {
