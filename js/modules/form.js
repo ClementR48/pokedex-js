@@ -1,7 +1,5 @@
 import { choosePokemon } from "./choosePokemon.js";
-import { initList } from "./listPokemon.js";
 import { map } from "./map.js";
-import { drawPokemon } from "./pokemon.js";
 
 export function formUser() {
   if (!localStorage.getItem("nameUser")) {
@@ -43,7 +41,7 @@ export function formUser() {
     }
   } else {
     if (localStorage.getItem("pokemon")) {
-      map()
+      map();
     } else {
       choosePokemon();
     }

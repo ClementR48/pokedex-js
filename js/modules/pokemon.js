@@ -1,5 +1,4 @@
 export function drawPokemon(pokemon) {
-  console.log(pokemon);
   const template = document.getElementById("pokemon_info");
 
   const listPokemon = document.querySelector(".list-pokemons");

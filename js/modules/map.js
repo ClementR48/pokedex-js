@@ -1,3 +1,7 @@
+import { battle } from "./battle.js";
+
+let x = 0;
+let y = 0;
 export function map() {
   const container = document.querySelector(".container");
   container.innerHTML = "";
@@ -8,10 +12,11 @@ export function map() {
     tableElement.appendChild(row);
     for (let t = 0; t < 10; t++) {
       const cases = document.createElement("td");
-      cases.setAttribute("index", `${c}${t}`);
+      cases.setAttribute("x", ` ${c}`);
+      cases.setAttribute("y", ` ${t}`);
       cases.className = "cases";
       cases.textContent = "🌳";
-      if (cases.getAttribute("index") == "00") {
+      if (cases.getAttribute("x") == x && cases.getAttribute("y") == y) {
         cases.textContent = "🦇";
         cases.setAttribute("class", "perso");
       }
@@ -20,15 +25,44 @@ export function map() {
   }
   container.appendChild(tableElement);
 
-  const personnage = document.querySelector(".perso");
   document.addEventListener("keydown", handleKeydown);
+}
 
-  function handleKeydown(e) {
-    let cases = document.querySelectorAll(".cases");
+function handleKeydown(e) {
+  const personnage = document.querySelector(".perso");
+  let cases = document.querySelectorAll(".cases");
 
-    if (e.code === "ArrowRight") {
-      
-      
+  function moves(mov) {
+    personnage.className = "cases";
+    personnage.textContent = "🌳";
+    mov;
+    let randomBattle = Math.floor(Math.random() * 3);
+
+    if (randomBattle === 1) {
+      battle();
     }
+    for (let index = 0; index < cases.length; index++) {
+      if (
+        cases[index].getAttribute("x") == x &&
+        cases[index].getAttribute("y") == y
+      ) {
+        cases[index].textContent = "🦇";
+        cases[index].setAttribute("class", "perso");
+      }
+    }
+  }
+
+  if (e.code === "ArrowRight" && y !== 9) {
+    moves(y++);
+  }
+  if (e.code === "ArrowLeft" && y !== 0) {
+    moves(y--);
+  }
+
+  if (e.code === "ArrowDown" && x != 9) {
+    moves(x++);
+  }
+  if (e.code === "ArrowUp" && x != 0) {
+    moves(x--);
   }
 }
