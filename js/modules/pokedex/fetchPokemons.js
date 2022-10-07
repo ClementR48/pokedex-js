@@ -1,5 +1,6 @@
 import { initList } from "./listPokemon.js";
-import { drawPokemon } from "./pokemon.js";
+import { Pokemon } from "./pokemon.js";
+
 
 let limit = 20;
 export const fetchData = (offset) => {
@@ -22,7 +23,9 @@ export const fetchData = (offset) => {
               return res.json();
             })
             .then((dataPokemons) => {
-              drawPokemon(dataPokemons);
+              let pokemon = new Pokemon(dataPokemons)
+              pokemon.drawPokemon()
+              
             });
         });
       });

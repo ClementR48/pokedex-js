@@ -5,7 +5,7 @@ const container = document.querySelector(".container");
 let x = 0;
 let y = 0;
 export function map() {
-  container.innerHTML = "";
+  
 
   const tableElement = document.createElement("table");
   for (let c = 0; c < 12; c++) {

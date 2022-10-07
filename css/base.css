@@ -179,14 +179,14 @@ table{
   position: relative;
 }
 
-.arena div:first-child {
+.firstDivPokemon {
  
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: end;
 }
-.arena div:last-child {
+.firstDivPokemon2 {
   transform: scale(0);
   display: flex;
   align-items: center;
@@ -213,5 +213,20 @@ table{
 }
 
 .ulAttack{
+  padding: 5px;
+  list-style: none;
+  width: 200px;
   position: absolute;
+  background-color: grey;
+  left: -100%;
+}
+
+.attacks{
+  padding: 5px;
+}
+
+.attacks:hover{
+  color: grey;
+  background-color: #333;
+  cursor: pointer;
 }
