@@ -15,17 +15,28 @@ export class Pokemon {
     console.log(this.datas);
   }
 
+  getName() {
+    return this.name;
+  }
+
+  getImages() {
+    return this.images;
+  }
+
+  getHp() {
+    return this.stats[0].base_stat;
+  }
+
+  getSpeed() {
+    return this.stats[5].base_stat;
+  }
+
   drawPokemon() {
     const listPokemon = document.querySelector(".list-pokemons");
     const template = document.getElementById("pokemon_info");
     const clone = document.importNode(template.content, true);
 
     createCardPokemon(this.datas, clone);
-
     listPokemon.appendChild(clone);
-  }
-
-  starterPokemon(){
-   
   }
 }

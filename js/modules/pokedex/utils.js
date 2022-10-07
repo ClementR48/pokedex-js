@@ -2,8 +2,6 @@ export const createCardPokemon = (datas, clone) => {
   const cardPokemon = clone.querySelector(".card-pokemon");
   cardPokemon.setAttribute("data-set", datas.id);
 
-  //Color border
-
   speciesPokemon(datas.species, cardPokemon);
   createNamePokemon(datas.name, clone);
   createImagesPokemon(datas.sprites, clone);
